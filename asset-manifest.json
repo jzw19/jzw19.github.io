@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/jzw19/jzw19.github.io/static/css/main.f855e6bc.css",
-    "main.js": "/jzw19/jzw19.github.io/static/js/main.56c8a420.js",
-    "static/js/453.f81c0fb1.chunk.js": "/jzw19/jzw19.github.io/static/js/453.f81c0fb1.chunk.js",
-    "static/media/logo.svg": "/jzw19/jzw19.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/jzw19/jzw19.github.io/index.html",
-    "main.f855e6bc.css.map": "/jzw19/jzw19.github.io/static/css/main.f855e6bc.css.map",
-    "main.56c8a420.js.map": "/jzw19/jzw19.github.io/static/js/main.56c8a420.js.map",
-    "453.f81c0fb1.chunk.js.map": "/jzw19/jzw19.github.io/static/js/453.f81c0fb1.chunk.js.map"
+    "main.css": "/jzw19.github.io/gh-pages/static/css/main.f855e6bc.css",
+    "main.js": "/jzw19.github.io/gh-pages/static/js/main.6830aa78.js",
+    "static/js/453.f81c0fb1.chunk.js": "/jzw19.github.io/gh-pages/static/js/453.f81c0fb1.chunk.js",
+    "static/media/logo.svg": "/jzw19.github.io/gh-pages/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/jzw19.github.io/gh-pages/index.html",
+    "main.f855e6bc.css.map": "/jzw19.github.io/gh-pages/static/css/main.f855e6bc.css.map",
+    "main.6830aa78.js.map": "/jzw19.github.io/gh-pages/static/js/main.6830aa78.js.map",
+    "453.f81c0fb1.chunk.js.map": "/jzw19.github.io/gh-pages/static/js/453.f81c0fb1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.56c8a420.js"
+    "static/js/main.6830aa78.js"
   ]
 }
