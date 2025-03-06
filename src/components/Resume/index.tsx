@@ -20,7 +20,7 @@ const Resume: FC = () => {
     setNumPages(numPages);
 
   return (
-    <div className="body">
+    <>
       <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
         <Page
           className="resume"
@@ -33,7 +33,7 @@ const Resume: FC = () => {
       <p className="content">
         Page {pageNumber} of {numPages}
       </p>
-    </div>
+    </>
   );
 };
 

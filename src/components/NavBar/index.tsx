@@ -7,7 +7,7 @@ const NavBar: FC = () => {
   const navigate = useNavigate();
 
   return (
-    <AppBar position="static" color="inherit">
+    <AppBar position="sticky" color="inherit">
       <Toolbar variant="regular">
         <IconButton
           edge="start"

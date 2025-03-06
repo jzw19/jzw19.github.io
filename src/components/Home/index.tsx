@@ -6,9 +6,9 @@ import { IconButton } from "@mui/material";
 
 const Home: FC = () => {
   return (
-    <div className="body">
+    <>
       <h1>Hi, I'm Jimmy</h1>
-      <h4>Fullstack Engineer</h4>
+      <h4>Fullstack Software Engineer</h4>
       <div className="links">
         <IconButton className="contentButton" onClick={() => window.location.href = "https://github.com/jzw19"}>
           <img src={githubLogo} className="buttonLogo" />
@@ -17,7 +17,7 @@ const Home: FC = () => {
           <img src={linkedinLogo} className="buttonLogo" />
         </IconButton>
       </div>
-    </div>
+    </>
   );
 };
 
