@@ -1,5 +1,5 @@
 /*
-    Credit for this hook goes to https://github.com/mui/material-ui/issues/10739#issuecomment-1484828925
+    Credit for this hook: https://github.com/mui/material-ui/issues/10739#issuecomment-1484828925
 */
 
 import { useMediaQuery, useTheme } from "@mui/material";

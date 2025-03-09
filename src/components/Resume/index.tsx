@@ -4,6 +4,7 @@ import React, { FC, useState } from "react";
 import resume from "../../assets/My_Resume.pdf";
 import { pdfjs } from "react-pdf";
 import { useWindowSize } from "hooks/useWindowSize";
+import PageView from "../PageView";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -20,7 +21,7 @@ const Resume: FC = () => {
     setNumPages(numPages);
 
   return (
-    <>
+    <PageView>
       <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
         <Page
           className="resume"
@@ -33,7 +34,7 @@ const Resume: FC = () => {
       <p className="content">
         Page {pageNumber} of {numPages}
       </p>
-    </>
+    </PageView>
   );
 };
 
