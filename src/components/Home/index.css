@@ -1,10 +1,10 @@
 .links {
   display: flex;
-  gap: 16px;
+  gap: 2rem;
 }
 
 .contentButton {
-  width: 96px;
+  width: 6rem;
 }
 
 .buttonLogo {

@@ -14,14 +14,16 @@ const NavBar: FC = () => {
           color="inherit"
           size="large"
           aria-label="Home"
-          sx={{ mr: 2, height: 1/1 }}
+          sx={{ mr: 2, height: 1 / 1 }}
           onClick={() => navigate("/")}
         >
           <Home />
         </IconButton>
-        <Button size="large" onClick={() => navigate("/resume")}><strong>Resume</strong></Button>
+        <Button size="large" onClick={() => navigate("/resume")}>
+          <strong>Resume</strong>
+        </Button>
         {/* <Button size="large" onClick={() => navigate("/projects")}><strong>Projects</strong></Button> */}
-        <Button size="large" onClick={() => navigate("/about")}><strong>About</strong></Button>
+        {/* <Button size="large" onClick={() => navigate("/about")}><strong>About</strong></Button> */}
       </Toolbar>
     </AppBar>
   );

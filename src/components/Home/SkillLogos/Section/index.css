@@ -1,0 +1,11 @@
+.iconRow {
+  display: flex;
+  margin-block: 1rem;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.iconRow img {
+  width: 4rem;
+  height: 4rem;
+}

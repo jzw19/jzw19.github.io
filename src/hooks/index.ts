@@ -3,7 +3,7 @@ import { useAppBarHeight } from "./useAppBarHeight";
 import { useScrollPosition } from "./useScrollPosition";
 
 export default {
-    useWindowSize,
-    useAppBarHeight,
-    useScrollPosition
-}
+  useWindowSize,
+  useAppBarHeight,
+  useScrollPosition,
+};
