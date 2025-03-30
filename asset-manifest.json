@@ -1,18 +1,41 @@
 {
   "files": {
-    "main.css": "/static/css/main.7cbddbf7.css",
-    "main.js": "/static/js/main.319c7d10.js",
+    "main.css": "/static/css/main.1ecd8540.css",
+    "main.js": "/static/js/main.a937cc01.js",
     "static/js/453.f81c0fb1.chunk.js": "/static/js/453.f81c0fb1.chunk.js",
     "static/media/pdf.worker.min.mjs": "/static/media/pdf.worker.min.48ec784a5edb8e2894b8.mjs",
-    "static/media/My_Resume.pdf": "/static/media/My_Resume.def8cb0689bbfa9eba85.pdf",
+    "static/media/html.png": "/static/media/html.db24ecb69d792590dac3.png",
+    "static/media/jest.png": "/static/media/jest.95bffbbd80a3ba10dfa4.png",
+    "static/media/agile.png": "/static/media/agile.5a64af900f2cea160318.png",
+    "static/media/Resume.pdf": "/static/media/Resume.f7527303a4592d0ad3c4.pdf",
+    "static/media/gcp.png": "/static/media/gcp.e3c95f14d9c11b3802e9.png",
+    "static/media/webdriver.png": "/static/media/webdriver.f093197f48a21acad9a9.png",
+    "static/media/atlassian.png": "/static/media/atlassian.da7f13683e9458a9635b.png",
+    "static/media/svelte.png": "/static/media/svelte.92cf27ed1cbcb0e278df.png",
+    "static/media/redux-devtools.png": "/static/media/redux-devtools.afc8d80c5472c26a3540.png",
+    "static/media/docker.jpg": "/static/media/docker.a1949d68208e3d71f4a1.jpg",
+    "static/media/css.png": "/static/media/css.09ebf2f6ddf71fd8dc77.png",
+    "static/media/react.png": "/static/media/react.20adfb35ae6a6e5817bf.png",
+    "static/media/debugger.png": "/static/media/debugger.2ee42ed4b93c82470f34.png",
+    "static/media/rtl.png": "/static/media/rtl.dbefdc28f5ade8bcb3e2.png",
+    "static/media/redux.png": "/static/media/redux.1edba70acbe0a2484e24.png",
+    "static/media/go.png": "/static/media/go.6c63049c7ae8c9d4e858.png",
+    "static/media/python.png": "/static/media/python.91fe66c93d19d67edfc8.png",
+    "static/media/github-actions.png": "/static/media/github-actions.45ae0efb792c8777b32f.png",
+    "static/media/playwright.png": "/static/media/playwright.3d47089f3e9c04e67fcc.png",
+    "static/media/postman.png": "/static/media/postman.ce833d4a4200e32b85bb.png",
+    "static/media/scrum.png": "/static/media/scrum.b38dfd41b481b4065cbc.png",
+    "static/media/ts.png": "/static/media/ts.46badfe39c55c42ac749.png",
+    "static/media/InBug-Black.png": "/static/media/InBug-Black.85f850a54081a1da6c97.png",
+    "static/media/sql.png": "/static/media/sql.334461e8f4484fe99457.png",
     "static/media/InBug-White.png": "/static/media/InBug-White.183c507635f8f18f6138.png",
     "index.html": "/index.html",
-    "main.7cbddbf7.css.map": "/static/css/main.7cbddbf7.css.map",
-    "main.319c7d10.js.map": "/static/js/main.319c7d10.js.map",
+    "main.1ecd8540.css.map": "/static/css/main.1ecd8540.css.map",
+    "main.a937cc01.js.map": "/static/js/main.a937cc01.js.map",
     "453.f81c0fb1.chunk.js.map": "/static/js/453.f81c0fb1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cbddbf7.css",
-    "static/js/main.319c7d10.js"
+    "static/css/main.1ecd8540.css",
+    "static/js/main.a937cc01.js"
   ]
 }
