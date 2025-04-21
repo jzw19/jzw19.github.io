@@ -22,8 +22,7 @@ const NavBar: FC = () => {
         <Button size="large" onClick={() => navigate("/resume")}>
           <strong>Resume</strong>
         </Button>
-        {/* <Button size="large" onClick={() => navigate("/projects")}><strong>Projects</strong></Button> */}
-        {/* <Button size="large" onClick={() => navigate("/about")}><strong>About</strong></Button> */}
+        {/* <Button size="large" onClick={() => navigate("/processes")}><strong>Processes</strong></Button> */}
       </Toolbar>
     </AppBar>
   );

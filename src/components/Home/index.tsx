@@ -1,4 +1,4 @@
-import "./index.css";
+import "./index.scss";
 import React, { FC, useRef } from "react";
 import githubLogo from "../../assets/github-mark-white.png";
 import linkedinLogo from "../../assets/InBug-White.png";
@@ -32,7 +32,7 @@ const Home: FC = () => {
       <PageView ref={firstPageRef}>
         <h1>Hi, I'm Jimmy</h1>
         <h4>
-          Product-oriented
+          Product-conscious
           <br />
           Fullstack Software Engineer
         </h4>

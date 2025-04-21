@@ -1,6 +1,6 @@
-import "./index.css";
+import "./index.scss";
 import { Document, Page } from "react-pdf";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import resume from "../../assets/Resume.pdf";
 import { pdfjs } from "react-pdf";
 import { useWindowSize } from "hooks/useWindowSize";

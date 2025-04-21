@@ -1,9 +1,10 @@
-import "./App.css";
+import "./App.scss";
 import React, { FC } from "react";
 import NavBar from "./components/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Resume from "./components/Resume";
+import Processes from "./components/Processes";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const App: FC = () => {
@@ -20,8 +21,7 @@ const App: FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/resume" element={<Resume />} />
-          {/* <Route path="/projects" element={<div>TODO</div>} /> */}
-          {/* <Route path="/about" element={<div>TODO</div>} /> */}
+          {/* <Route path="/processes" element={<Processes />} /> */}
         </Routes>
       </div>
     </ThemeProvider>
