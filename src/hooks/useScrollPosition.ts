@@ -4,7 +4,11 @@
 
 import { useEffect, useState } from "react";
 
-export function useScrollPosition() {
+/**
+ * 
+ * @returns {number} The current scroll position of the window in pixels.
+ */
+export function useScrollPosition(convertToRem?: boolean) {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
 
   useEffect(() => {
@@ -25,5 +29,7 @@ export function useScrollPosition() {
     };
   }, [scrollPosition]);
 
-  return scrollPosition;
+  const divisor = parseInt(getComputedStyle(document.documentElement).fontSize);
+  const height = convertToRem ? scrollPosition / divisor : scrollPosition; // convert to rem if needed
+  return height;
 }

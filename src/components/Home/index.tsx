@@ -10,8 +10,9 @@ import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 import SkillLogos from "./SkillLogos";
 
 const Home: FC = () => {
-  const currentScrollPosition = useScrollPosition();
-  const muiAppBarHeight = useAppBarHeight(true);
+  const currentScrollPositionPx = useScrollPosition(false);
+  const muiAppBarHeightPx = useAppBarHeight(false);
+  const muiAppBarHeightRem = useAppBarHeight(true);
 
   const firstPageRef = useRef<HTMLDivElement | null>(null);
   const secondPageRef = useRef<HTMLDivElement | null>(null);
@@ -22,9 +23,14 @@ const Home: FC = () => {
   ];
 
   const scrollToPage = (index: number) => {
-    index < pageRefs.length &&
-      index > -1 &&
-      pageRefs[index].current?.scrollIntoView({ behavior: "smooth" });
+    if (index === 0) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    } else {
+      index < pageRefs.length &&
+        index > -1 &&
+        pageRefs[index].current?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -59,36 +65,44 @@ const Home: FC = () => {
       <PageView ref={secondPageRef}>
         <SkillLogos />
       </PageView>
-      <IconButton
-        className="prevPageButton"
-        sx={{
-          position: "fixed",
-          top: `${muiAppBarHeight + 1}rem`,
-          right: "1rem",
-        }}
-        onClick={() =>
-          scrollToPage(
-            Math.floor(
-              currentScrollPosition / (window.innerHeight - muiAppBarHeight)
-            )
-          )
-        }
-      >
-        <KeyboardArrowUp />
-      </IconButton>
-      <IconButton
-        className="nextPageButton"
-        sx={{ position: "fixed", bottom: "1rem", right: "1rem" }}
-        onClick={() =>
-          scrollToPage(
-            Math.ceil(
-              currentScrollPosition / (window.innerHeight - muiAppBarHeight)
-            )
-          )
-        }
-      >
-        <KeyboardArrowDown />
-      </IconButton>
+      {
+        currentScrollPositionPx > muiAppBarHeightPx && (
+          <IconButton
+            className="prevPageButton"
+            sx={{
+              position: "fixed",
+              top: `${muiAppBarHeightRem + 1}rem`,
+              right: "1rem",
+            }}
+            onClick={() => 
+              scrollToPage(
+                Math.floor(
+                  currentScrollPositionPx / (window.innerHeight - muiAppBarHeightPx)
+                )
+              )
+            }
+          >
+            <KeyboardArrowUp />
+          </IconButton>
+        )
+      }
+      {
+        currentScrollPositionPx < document.body.offsetHeight - window.innerHeight - muiAppBarHeightPx && (
+          <IconButton
+            className="nextPageButton"
+            sx={{ position: "fixed", bottom: "1rem", right: "1rem" }}
+            onClick={() =>
+              scrollToPage(
+                Math.ceil(
+                  currentScrollPositionPx / (window.innerHeight - muiAppBarHeightPx)
+                )
+              )
+            }
+          >
+            <KeyboardArrowDown />
+          </IconButton>
+        )
+      }
     </div>
   );
 };
