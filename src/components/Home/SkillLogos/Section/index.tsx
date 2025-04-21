@@ -3,7 +3,7 @@ import React, { FC } from "react";
 
 interface SectionProps {
   title: string;
-  logos: Array<Array<string>>;
+  logos: string[][];
 }
 
 const Section: FC<SectionProps> = ({ title, logos }) => (

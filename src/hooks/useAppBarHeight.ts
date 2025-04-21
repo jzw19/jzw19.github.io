@@ -4,7 +4,7 @@
 
 import { useMediaQuery, useTheme } from "@mui/material";
 
-type MinHeight = {
+interface MinHeight {
   minHeight: number;
 };
 

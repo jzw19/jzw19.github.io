@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Resume from "./components/Resume";
-import Processes from "./components/Processes";
+// import Processes from "./components/Processes";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const App: FC = () => {

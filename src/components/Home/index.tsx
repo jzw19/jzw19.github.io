@@ -17,7 +17,7 @@ const Home: FC = () => {
   const firstPageRef = useRef<HTMLDivElement | null>(null);
   const secondPageRef = useRef<HTMLDivElement | null>(null);
 
-  const pageRefs: Array<React.RefObject<HTMLDivElement | null>> = [
+  const pageRefs: React.RefObject<HTMLDivElement | null>[] = [
     firstPageRef,
     secondPageRef,
   ];
@@ -26,10 +26,8 @@ const Home: FC = () => {
     if (index === 0) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
-    } else {
-      index < pageRefs.length &&
-        index > -1 &&
-        pageRefs[index].current?.scrollIntoView({ behavior: "smooth" });
+    } else if (index < pageRefs.length && index > -1) {
+      pageRefs[index].current?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -65,44 +63,45 @@ const Home: FC = () => {
       <PageView ref={secondPageRef}>
         <SkillLogos />
       </PageView>
-      {
-        currentScrollPositionPx > muiAppBarHeightPx && (
-          <IconButton
-            className="prevPageButton"
-            sx={{
-              position: "fixed",
-              top: `${muiAppBarHeightRem + 1}rem`,
-              right: "1rem",
-            }}
-            onClick={() => 
-              scrollToPage(
-                Math.floor(
-                  currentScrollPositionPx / (window.innerHeight - muiAppBarHeightPx)
-                )
+      {currentScrollPositionPx > muiAppBarHeightPx && (
+        <IconButton
+          className="prevPageButton"
+          sx={{
+            position: "fixed",
+            top: `${muiAppBarHeightRem + 1}rem`,
+            right: "1rem",
+          }}
+          onClick={() => {
+            scrollToPage(
+              Math.floor(
+                (currentScrollPositionPx - 1) /
+                  (window.innerHeight - muiAppBarHeightPx)
               )
-            }
-          >
-            <KeyboardArrowUp />
-          </IconButton>
-        )
-      }
-      {
-        currentScrollPositionPx < document.body.offsetHeight - window.innerHeight - muiAppBarHeightPx && (
-          <IconButton
-            className="nextPageButton"
-            sx={{ position: "fixed", bottom: "1rem", right: "1rem" }}
-            onClick={() =>
-              scrollToPage(
-                Math.ceil(
-                  currentScrollPositionPx / (window.innerHeight - muiAppBarHeightPx)
-                )
+            )
+          }
+          }
+        >
+          <KeyboardArrowUp />
+        </IconButton>
+      )}
+      {(currentScrollPositionPx <
+        document.body.offsetHeight - window.innerHeight - muiAppBarHeightPx ||
+        !currentScrollPositionPx) && (
+        <IconButton
+          className="nextPageButton"
+          sx={{ position: "fixed", bottom: "1rem", right: "1rem" }}
+          onClick={() =>
+            scrollToPage(
+              Math.ceil(
+                (currentScrollPositionPx + 1) /
+                  (window.innerHeight - muiAppBarHeightPx)
               )
-            }
-          >
-            <KeyboardArrowDown />
-          </IconButton>
-        )
-      }
+            )
+          }
+        >
+          <KeyboardArrowDown />
+        </IconButton>
+      )}
     </div>
   );
 };
