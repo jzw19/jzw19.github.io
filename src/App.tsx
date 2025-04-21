@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Resume from "./components/Resume";
 // import Processes from "./components/Processes";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
 
 const App: FC = () => {
   const darkTheme = createTheme({
@@ -16,6 +17,7 @@ const App: FC = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       <div className="App">
         <NavBar />
         <Routes>
