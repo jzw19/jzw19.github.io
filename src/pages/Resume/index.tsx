@@ -1,10 +1,12 @@
 import "./index.scss";
+
 import { Document, Page } from "react-pdf";
 import React, { FC } from "react";
-import resume from "../../assets/Resume.pdf";
+
+import PageView from "../../components/PageView";
 import { pdfjs } from "react-pdf";
+import resume from "../../assets/Resume.pdf";
 import { useWindowSize } from "hooks/useWindowSize";
-import PageView from "../PageView";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",

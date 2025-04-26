@@ -2,9 +2,9 @@ import "./App.scss";
 import React, { FC } from "react";
 import NavBar from "./components/NavBar";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Resume from "./components/Resume";
-// import Processes from "./components/Processes";
+import Home from "./pages/Home";
+import Resume from "./pages/Resume";
+import About from "./pages/About";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
@@ -23,7 +23,7 @@ const App: FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/resume" element={<Resume />} />
-          {/* <Route path="/processes" element={<Processes />} /> */}
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </ThemeProvider>

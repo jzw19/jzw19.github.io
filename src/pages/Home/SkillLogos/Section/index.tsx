@@ -1,4 +1,5 @@
 import "./index.scss";
+
 import React, { FC } from "react";
 
 interface SectionProps {
@@ -12,7 +13,7 @@ const Section: FC<SectionProps> = ({ title, logos }) => (
     {logos.map((row, index) => (
       <div key={`iconRow_${index}`} className="iconRow">
         {row.map((logo, i) => (
-          <img key={`${logo}_${i}`} src={logo} />
+          <img key={`${logo}_${i}`} src={logo} alt={logo} />
         ))}
       </div>
     ))}
