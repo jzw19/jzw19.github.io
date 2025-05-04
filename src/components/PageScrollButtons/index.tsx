@@ -34,7 +34,6 @@ const PageScrollButtons: FC<PageScrollButtonsProps> = ({ pageRefs }) => {
             right: "1rem",
           }}
           onClick={() => {
-            console.log(`${currentScrollPositionPx - muiAppBarHeightPx} / ${window.innerHeight - muiAppBarHeightPx} = ${(currentScrollPositionPx - muiAppBarHeightPx) / (window.innerHeight + muiAppBarHeightPx)}`)
             scrollToPage(
               pageRefs,
               Math.floor(
@@ -55,7 +54,6 @@ const PageScrollButtons: FC<PageScrollButtonsProps> = ({ pageRefs }) => {
           className="nextPageButton"
           sx={{ position: "fixed", bottom: "1rem", right: "1rem" }}
           onClick={() => {
-            console.log(`${currentScrollPositionPx - muiAppBarHeightPx} / ${window.innerHeight - muiAppBarHeightPx} = ${(currentScrollPositionPx + muiAppBarHeightPx) / (window.innerHeight - muiAppBarHeightPx)}`)
             scrollToPage(
               pageRefs,
               Math.ceil(

@@ -26,6 +26,7 @@ import nodeLogo from "./nodejs.png";
 import npmLogo from "./npm.png";
 import playwrightLogo from "./playwright.png";
 import postmanLogo from "./postman.png";
+import previewMarkdown from "./preview_markdown.png";
 import pythonLogo from "./python.png";
 import reactLogo from "./react.png";
 import reduxDevToolsLogo from "./redux-devtools.png";
@@ -70,6 +71,7 @@ export {
   npmLogo,
   playwrightLogo,
   postmanLogo,
+  previewMarkdown,
   pythonLogo,
   reactLogo,
   reduxDevToolsLogo,
