@@ -1,5 +1,6 @@
 import { AppBar, Button, IconButton, Toolbar } from "@mui/material";
 import React, { FC } from "react";
+
 import Home from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 
@@ -23,6 +24,7 @@ const NavBar: FC = () => {
           <strong>Resume</strong>
         </Button>
         <Button size="large" onClick={() => navigate("/about")}><strong>About</strong></Button>
+        <Button size="large" onClick={() => navigate("/projects")}><strong>Projects</strong></Button>
       </Toolbar>
     </AppBar>
   );
