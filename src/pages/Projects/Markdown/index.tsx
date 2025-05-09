@@ -4,6 +4,7 @@ import { Button, TextField } from "@mui/material";
 import React, { FC, useEffect, useRef, useState } from "react";
 import { parseMarkdownToAST, renderASTtoHTML } from "./utils";
 
+import DOMPurify from "dompurify";
 import { MarkdownASTNode } from "./types";
 import PageView from "../../../components/PageView";
 
@@ -28,7 +29,7 @@ const Markdown: FC = () => {
 
   useEffect(() => {
     const htmlString = renderASTtoHTML(currentAst);
-    setHtml(htmlString);
+    setHtml(DOMPurify.sanitize(htmlString));
   }, [currentAst]);
 
   const onClickGenerateHTML = () => {
