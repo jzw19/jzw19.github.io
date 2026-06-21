@@ -40,7 +40,7 @@ const About: FC = () => {
       <PageView ref={firstPageRef}>
         <img src={saas} aria-label={SAAS_LABEL} alt={SAAS_LABEL} />
         <p>
-          I am an adaptable software engineer with about 6 years of experience in maintaining and developing B2B SaaS platforms.
+          I am an adaptable software engineer with about 7 years of experience in maintaining and developing B2B SaaS platforms.
         </p>
       </PageView>
       <PageView ref={secondPageRef}>
