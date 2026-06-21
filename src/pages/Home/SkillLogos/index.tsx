@@ -4,6 +4,8 @@ import React, { FC } from "react";
 import {
   agileLogo,
   atlassianLogo,
+  awsLogo,
+  bigqueryLogo,
   chromeDevToolsLogo,
   cssLogo,
   debuggerLogo,
@@ -17,19 +19,24 @@ import {
   jestLogo,
   jsLogo,
   kanbanLogo,
+  lookerLogo,
   nodeLogo,
   npmLogo,
   playwrightLogo,
+  postgresLogo,
   postmanLogo,
   pythonLogo,
   reactLogo,
   reduxDevToolsLogo,
   reduxLogo,
+  restApiLogo,
   rtlLogo,
   scrumLogo,
   sqlLogo,
   svelteLogo,
+  terraformLogo,
   tsLogo,
+  vitestLogo,
   webdriverLogo,
   yarnLogo,
 } from "../../../assets";
@@ -49,29 +56,43 @@ const SkillLogos: FC = () => (
     />
 
     <Section
+      title="Backend & Data"
+      logos={[
+        [postgresLogo, restApiLogo, grpcLogo, bigqueryLogo, lookerLogo],
+      ]}
+    />
+
+    <Section
+      title="Cloud & Infrastructure"
+      logos={[
+        [awsLogo, gcpLogo, dockerLogo, terraformLogo, githubActionsLogo],
+      ]}
+    />
+
+    <Section
+      title="Testing"
+      logos={[
+        [jestLogo, vitestLogo, rtlLogo, playwrightLogo],
+      ]}
+    />
+
+    <Section
       title="Other Tools"
       logos={[
         [
           reactLogo,
           reduxLogo,
-          jestLogo,
-          rtlLogo,
           nodeLogo,
-          playwrightLogo,
-          dockerLogo,
           gitLogo,
           yarnLogo,
         ],
         [
           npmLogo,
-          gcpLogo,
           atlassianLogo,
-          githubActionsLogo,
           chromeDevToolsLogo,
           reduxDevToolsLogo,
           debuggerLogo,
           postmanLogo,
-          grpcLogo,
         ],
       ]}
     />

@@ -1,3 +1,5 @@
+import awsLogo from "./aws.svg";
+import bigqueryLogo from "./bigquery.svg";
 import InBugLogoBlack from "./InBug-Black.png";
 import InBugLogoWhite from "./InBug-White.png";
 import accessibility from "./accessibility.png";
@@ -26,23 +28,30 @@ import nodeLogo from "./nodejs.png";
 import npmLogo from "./npm.png";
 import playwrightLogo from "./playwright.png";
 import postmanLogo from "./postman.png";
+import lookerLogo from "./looker.svg";
+import postgresLogo from "./postgres.svg";
 import previewMarkdown from "./preview_markdown.png";
 import pythonLogo from "./python.png";
 import reactLogo from "./react.png";
 import reduxDevToolsLogo from "./redux-devtools.png";
 import reduxLogo from "./redux.png";
+import restApiLogo from "./rest-api.svg";
 import rtlLogo from "./rtl.png";
 import saas from "./saas.png";
 import scrumLogo from "./scrum.png";
 import sqlLogo from "./sql.png";
 import svelteLogo from "./svelte.png";
 import swissArmyKnife from "./swissArmyKnife.png";
+import terraformLogo from "./terraform.svg";
 import tsLogo from "./ts.png";
+import vitestLogo from "./vitest.svg";
 import waveHi from "./wave-hi.gif";
 import webdriverLogo from "./webdriver.png";
 import yarnLogo from "./yarn.png";
 
 export {
+  awsLogo,
+  bigqueryLogo,
   InBugLogoBlack,
   InBugLogoWhite,
   accessibility,
@@ -67,22 +76,27 @@ export {
   jestLogo,
   jsLogo,
   kanbanLogo,
+  lookerLogo,
   nodeLogo,
   npmLogo,
   playwrightLogo,
+  postgresLogo,
   postmanLogo,
   previewMarkdown,
   pythonLogo,
   reactLogo,
   reduxDevToolsLogo,
   reduxLogo,
+  restApiLogo,
   rtlLogo,
   saas,
   scrumLogo,
   sqlLogo,
   svelteLogo,
   swissArmyKnife,
+  terraformLogo,
   tsLogo,
+  vitestLogo,
   waveHi,
   webdriverLogo,
   yarnLogo,
