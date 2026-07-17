@@ -12,6 +12,7 @@ const Projects: FC = () => {
     <PageView>
       <Card
         onClick={() => navigate("/projects/markdown")}
+        aria-label="View Markdown Parser project details"
         raised
         sx={{
           "&:hover": {

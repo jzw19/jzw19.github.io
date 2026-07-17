@@ -33,6 +33,7 @@ const PageScrollButtons: FC<PageScrollButtonsProps> = ({ pageRefs }) => {
             top: `${muiAppBarHeightRem + 1}rem`,
             right: "1rem",
           }}
+          aria-label="Scroll to previous section"
           onClick={() => {
             scrollToPage(
               pageRefs,
@@ -41,8 +42,7 @@ const PageScrollButtons: FC<PageScrollButtonsProps> = ({ pageRefs }) => {
                   (window.innerHeight + muiAppBarHeightPx)
               )
             )
-          }
-          }
+          }}
         >
           <KeyboardArrowUp />
         </IconButton>
@@ -53,6 +53,7 @@ const PageScrollButtons: FC<PageScrollButtonsProps> = ({ pageRefs }) => {
         <IconButton
           className="nextPageButton"
           sx={{ position: "fixed", bottom: "1rem", right: "1rem" }}
+          aria-label="Scroll to next section"
           onClick={() => {
             scrollToPage(
               pageRefs,
@@ -61,8 +62,7 @@ const PageScrollButtons: FC<PageScrollButtonsProps> = ({ pageRefs }) => {
                   (window.innerHeight - muiAppBarHeightPx)
               )
             )
-          }
-          }
+          }}
         >
           <KeyboardArrowDown />
         </IconButton>
