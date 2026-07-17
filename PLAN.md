@@ -23,7 +23,7 @@ The site is a functional React/TypeScript/MUI application deployed via GitHub Pa
    - [x] Implement lazy loading for images (especially skill logos)
 
 2. **Accessibility Improvements**
-   - [ ] Add skip-to-content link at top of page
+   - [x] Add skip-to-content link at top of page
    - [ ] Ensure all interactive elements have accessible names
    - [ ] Implement focus trapping for modals/dialogs (if any added)
    - [ ] Run axe-core audit and fix critical violations
@@ -125,15 +125,16 @@ We will measure success by:
 - [Web Vitals Guide](https://web.dev/vitals/)
 - [WCAG 2.1 Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
 - [Google SEO Fundamentals](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+- [Testing Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html] Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
+- [Google SEO Fundamentals](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
 - [Testing Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
 - [Atomic Design Principles](https://atomicdesign.bradfrost.com/)
 - [Architectural Decision Records](https://adr.github.io/)
 
 ## Next Steps
-1. Create this plan document (DONE)
-2. Begin Phase 1 implementation
-3. Schedule weekly check-ins to review progress
-4. Adjust plan based on learnings and changing priorities
+1. Continue with Phase 1 Accessibility Improvements
+2. Schedule weekly check-ins to review progress
+3. Adjust plan based on learnings and changing priorities
 
 ---
 *Last Updated: July 17, 2026*
