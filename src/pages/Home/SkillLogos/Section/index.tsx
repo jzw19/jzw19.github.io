@@ -13,7 +13,7 @@ const Section: FC<SectionProps> = ({ title, logos }) => (
     {logos.map((row, index) => (
       <div key={`iconRow_${index}`} className="iconRow">
         {row.map((logo, i) => (
-          <img key={`${logo}_${i}`} src={logo} alt={logo} />
+          <img key={`${logo}_${i}`} src={logo} alt={logo} loading="lazy" />
         ))}
       </div>
     ))}
