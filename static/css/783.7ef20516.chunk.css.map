@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/783.7ef20516.chunk.css","mappings":"AAAA,QAGE,mBAFA,aACA,qBACA","sources":["pages/Resume/index.scss"],"sourcesContent":[".resume {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n}\r\n"],"names":[],"sourceRoot":""}
