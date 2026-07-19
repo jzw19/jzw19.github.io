@@ -1,8 +1,8 @@
 import "./index.scss";
 
 import React, { FC, useRef } from "react";
-import { Helmet } from "react-helmet-async";
 
+import { Helmet } from "react-helmet-async";
 import { IconButton } from "@mui/material";
 import PageScrollButtons from "../../components/PageScrollButtons";
 import PageView from "../../components/PageView";

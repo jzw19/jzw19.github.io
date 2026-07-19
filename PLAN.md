@@ -47,7 +47,7 @@ The site is a functional React/TypeScript/MUI application deployed via GitHub Pa
    - [x] Install and configure `react-helmet-async`
    - [x] Add dynamic meta tags (title, description) per route
    - [x] Implement Open Graph and Twitter Card meta tags
-   - [ ] Add JSON-LD structured data for Person and WebSite
+   - [x] Add JSON-LD structured data for Person and WebSite
    - [ ] Generate and submit sitemap.xml
 
 4. **Code Quality & Maintainability**
