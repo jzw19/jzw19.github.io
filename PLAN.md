@@ -46,7 +46,7 @@ The site is a functional React/TypeScript/MUI application deployed via GitHub Pa
 3. **SEO & Social Sharing**
    - [x] Install and configure `react-helmet-async`
    - [x] Add dynamic meta tags (title, description) per route
-   - [ ] Implement Open Graph and Twitter Card meta tags
+   - [x] Implement Open Graph and Twitter Card meta tags
    - [ ] Add JSON-LD structured data for Person and WebSite
    - [ ] Generate and submit sitemap.xml
 
