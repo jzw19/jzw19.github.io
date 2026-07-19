@@ -2,6 +2,8 @@ import "./index.scss";
 
 import { Button, TextField } from "@mui/material";
 import React, { FC, useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
+
 import { parseMarkdownToAST, renderASTtoHTML } from "./utils";
 
 import DOMPurify from "dompurify";
@@ -14,7 +16,7 @@ const Markdown: FC = () => {
     children: [],
   };
   const defaultInput =
-    "# h1\n## h2\n### h3\n#### h4\n##### h5\n###### h6\n\n**bold**\n*italic*\n~~strikethrough~~\n\n[link](https://example.com)\n\n- list item 1\n- list item 2\n- list item 3\n\n1. numbered item 1\n2. numbered item 2\n3. numbered item 3\n\n```console.log('Hello, world!');```\n";
+    "# h1\\n## h2\\n### h3\\n#### h4\\n##### h5\\n###### h6\\n\\n**bold**\\n*italic*\\n~~strikethrough~~\\n\\n[link](https://example.com)\\n\\n- list item 1\\n- list item 2\\n- list item 3\\n\\n1. numbered item 1\\n2. numbered item 2\\n3. numbered item 3\\n\\n```console.log('Hello, world!');```\\n";
 
   const resultsPageRef = useRef<HTMLDivElement | null>(null);
 
@@ -41,6 +43,20 @@ const Markdown: FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Markdown Parser Tool - Jimmy Wen's Projects</title>
+        <meta name="description" content="Interactive markdown parser tool that converts markdown to HTML in real-time. Built by Jimmy Wen as part of his software engineering portfolio." />
+        <link rel="canonical" href="https://jzw19.github.io/projects/markdown" />
+        <meta property="og:title" content="Markdown Parser Tool - Jimmy Wen's Projects" />
+        <meta property="og:description" content="Interactive markdown parser tool that converts markdown to HTML in real-time. Built by Jimmy Wen as part of his software engineering portfolio." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jzw19.github.io/projects/markdown" />
+        <meta property="og:image" content="https://jzw19.github.io/og-image.jpg" />
+        <meta property="og:site_name" content="Jimmy Wen Portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Markdown Parser Tool - Jimmy Wen's Projects" />
+        <meta name="twitter:description" content="Interactive markdown parser tool that converts markdown to HTML in real-time. Built by Jimmy Wen as part of his software engineering portfolio." />
+      </Helmet>
       <PageView>
         <h1>Markdown Parser</h1>
         <TextField

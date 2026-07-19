@@ -1,6 +1,8 @@
 import "./index.scss";
 
 import React, { FC, useRef } from "react";
+import { Helmet } from "react-helmet-async";
+
 import {
   accessibility,
   api,
@@ -10,7 +12,6 @@ import {
   saas,
   swissArmyKnife,
 } from "../../assets";
-
 import PageScrollButtons from "../../components/PageScrollButtons";
 import PageView from "../../components/PageView";
 
@@ -37,6 +38,20 @@ const About: FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>About Jimmy Wen - Software Engineer Background & Experience</title>
+        <meta name="description" content="Learn about Jimmy Wen's background as a software engineer with 7 years of experience in B2B SaaS platforms, frontend development, debugging, and testing methodologies." />
+        <link rel="canonical" href="https://jzw19.github.io/about" />
+        <meta property="og:title" content="About Jimmy Wen - Software Engineer Background & Experience" />
+        <meta property="og:description" content="Learn about Jimmy Wen's background as a software engineer with 7 years of experience in B2B SaaS platforms, frontend development, debugging, and testing methodologies." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jzw19.github.io/about" />
+        <meta property="og:image" content="https://jzw19.github.io/og-image.jpg" />
+        <meta property="og:site_name" content="Jimmy Wen Portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Jimmy Wen - Software Engineer Background & Experience" />
+        <meta name="twitter:description" content="Learn about Jimmy Wen's background as a software engineer with 7 years of experience in B2B SaaS platforms, frontend development, debugging, and testing methodologies." />
+      </Helmet>
       <PageView ref={firstPageRef}>
         <img src={saas} aria-label={SAAS_LABEL} alt={SAAS_LABEL} />
         <p>
