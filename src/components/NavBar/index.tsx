@@ -25,6 +25,7 @@ const NavBar: FC = () => {
         </Button>
         <Button size="large" onClick={() => navigate("/about")}><strong>About</strong></Button>
         <Button size="large" onClick={() => navigate("/projects")}><strong>Projects</strong></Button>
+        <Button size="large" onClick={() => navigate("/data-visualization")}><strong>Data Visualization</strong></Button>
       </Toolbar>
     </AppBar>
   );

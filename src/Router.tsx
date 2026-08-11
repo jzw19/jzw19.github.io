@@ -1,5 +1,7 @@
 import React, { FC, Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+
+import DataVisualization from "pages/Data_Visualization";
 import SkeletonLoader from "./components/SkeletonLoader";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -34,6 +36,11 @@ const Router: FC = () => {
       <Route path="/projects/markdown" element={
         <Suspense fallback={<SkeletonLoader />}>
           <Markdown />
+        </Suspense>
+      } />
+      <Route path="/data-visualization" element={
+        <Suspense fallback={<SkeletonLoader />}>
+          <DataVisualization />
         </Suspense>
       } />
     </Routes>
