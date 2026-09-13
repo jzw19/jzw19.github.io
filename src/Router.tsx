@@ -1,5 +1,6 @@
 import React, { FC, Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+
 import SkeletonLoader from "./components/SkeletonLoader";
 
 const Home = lazy(() => import("./pages/Home"));
