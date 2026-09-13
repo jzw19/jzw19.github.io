@@ -2,6 +2,7 @@ import { LLMApiService, LLMService } from './llm/llmService';
 
 import { KnowledgeDocument } from './knowledge/knowledgeBase';
 import { Retriever } from './retrieval/retriever';
+import { getChatBotConfig } from './config';
 
 // src/chatbot/chatbotService.ts
 
@@ -19,6 +20,8 @@ interface ChatOptions {
   maxHistoryTurns?: number;
   /** Custom system prompt */
   systemPrompt?: string;
+  /** Retrieval threshold (0-1) */
+  threshold?: number;
 }
 
 /**
@@ -71,19 +74,20 @@ Keep responses concise and professional.
 You are not Jimmy and should not claim to speak for Jimmy.`;
 
   constructor(options: ChatOptions = {}) {
+    const config = getChatBotConfig();
+    
     this.retriever = new Retriever({
-      maxResults: options.maxContextDocuments ?? 5,
-      threshold: 0.15, // From feasibility spike - balanced threshold
+      maxResults: options.maxContextDocuments ?? config.maxResults,
+      threshold: options.threshold ?? config.retrievalThreshold,
       boostExactPhrase: true,
       boostTechnicalTerms: true
     });
     
-    // Start with mock service for development
     // Use real LLM service (Transformers.js)
     this.llmService = new LLMApiService();
     
     this.options = {
-      maxContextDocuments: options.maxContextDocuments ?? 3,
+      maxContextDocuments: options.maxContextDocuments ?? config.maxContextDocuments,
       temperature: options.temperature ?? 0.3, // Low temperature for factual consistency
       maxTokens: options.maxTokens ?? 500,
       includeHistory: options.includeHistory ?? true,
@@ -103,7 +107,7 @@ You are not Jimmy and should not claim to speak for Jimmy.`;
     
     try {
       
-      // Initialize the LLM service (mock for now)
+      // Initialize the LLM service
       await this.llmService.initialize();
       
       this.isInitialized = true;

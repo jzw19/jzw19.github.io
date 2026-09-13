@@ -68,3 +68,44 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn predeploy` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Portfolio Chatbot Feature
+
+This portfolio includes an AI-powered chatbot that can answer questions about Jimmy Wen's professional experience, technical skills, projects, and education.
+
+### Features
+
+- **Browser-side AI**: Runs entirely in the visitor's browser using WebGPU when available
+- **Privacy-first**: No data is sent to external servers
+- **Grounded responses**: Only answers based on the supplied knowledge base (resume content)
+- **Source citations**: Responses include citations to knowledge base documents when practical
+- **Offline capable**: Works after initial load without internet connection
+
+### How to Use
+
+1. Click the chatbot icon in the bottom-right corner of the screen
+2. Ask questions about Jimmy's professional experience, skills, projects, or education
+3. The chatbot will provide grounded answers with source citations when appropriate
+4. For unsupported questions, the chatbot will indicate that the information is not available in the portfolio
+
+### Example Questions
+
+- "What technologies does Jimmy use?"
+- "What did Jimmy build at Madhive?"
+- "How much did Jimmy improve export latency?"
+- "What testing experience does Jimmy have?"
+- "Has Jimmy worked with Go?"
+
+### Implementation Status
+
+The chatbot feature is currently in **Increment 7: Performance Optimization & Deployment**. All core functionality is implemented and tested, including:
+
+- Knowledge base structure (Increment 1 - COMPLETED)
+- Retrieval system (Increment 2 - COMPLETED)
+- Chatbot UI with mocked responses (Increment 3 - COMPLETED)
+- Browser LLM integration (Increment 4 - COMPLETED)
+- Source citation and evidence tracking (Increment 5 - COMPLETED)
+- Comprehensive testing and evaluation framework (Increment 6 - COMPLETED)
+- Performance optimization and deployment preparation (Increment 7 - IN PROGRESS)
+
+All tests pass: 91 tests passing across test suites.

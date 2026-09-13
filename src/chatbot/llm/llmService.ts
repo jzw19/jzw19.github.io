@@ -1,23 +1,23 @@
-import { TextGenerationPipeline } from '@xenova/transformers';
+import { TextGenerationPipeline, pipeline } from '@huggingface/transformers';
 
 // src/chatbot/llm/llmService.ts
 export interface LLMService {
   /** Initialize the LLM service. Returns a promise that resolves when the model is ready. */
   initialize(): Promise<void>;
-  
+
   /** Generate a response from the given prompt. */
   generate(prompt: string, options?: { 
     temperature?: number; 
     maxTokens?: number; 
     signal?: AbortSignal 
   }): Promise<string>;
-  
+
   /** Check if the service is initialized and ready. */
   isReady(): boolean;
-  
+
   /** Get the current loading progress (0-1). */
   getProgress(): number;
-  
+
   /** Get any error that occurred during initialization or generation. */
   getError(): Error | null;
 }
@@ -27,7 +27,7 @@ export class MockLLMService implements LLMService {
   private initialized = false;
   private progress = 0;
   private error: Error | null = null;
-  
+
   async initialize(): Promise<void> {
     // Simulate loading progress
     return new Promise((resolve) => {
@@ -42,7 +42,7 @@ export class MockLLMService implements LLMService {
       }, 100);
     });
   }
-  
+
   async generate(prompt: string, options?: { 
     temperature?: number; 
     maxTokens?: number; 
@@ -51,7 +51,7 @@ export class MockLLMService implements LLMService {
     if (!this.initialized) {
       throw new Error('LLM service not initialized');
     }
-    
+
     // Simulate generation delay
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -60,23 +60,23 @@ export class MockLLMService implements LLMService {
       }, 500);
     });
   }
-  
+
   isReady(): boolean {
     return this.initialized;
   }
-  
+
   getProgress(): number {
     return this.progress;
   }
-  
+
   getError(): Error | null {
     return this.error;
   }
 }
 
-/**
- * Real LLM service implementation using @xenova/transformers (Transformers.js)
- * Implements browser-local inference with Phi-3-mini-4k-instruct model
+/** 
+ * Real LLM service implementation using @huggingface/transformers (Transformers.js)
+ * Implements browser-local inference with DistilGPT-2 model
  * Supports WebGPU, WebGL, and WASM backends with automatic fallback
  */
 export class LLMApiService implements LLMService {
@@ -87,36 +87,38 @@ export class LLMApiService implements LLMService {
   private error: Error | null = null;
 
   async initialize(): Promise<void> {
-    if (this.initialized) return;
+  if (this.initialized) return;
 
-    this.isLoading = true;
-    this.error = null;
+  this.isLoading = true;
+  this.error = null;
 
-    try {
-      // Import transformers dynamically to avoid SSR issues
-      const { pipeline } = await import('@xenova/transformers');
+  try {
+    this.pipeline = await pipeline(
+      'text-generation',
+      'onnx-community/Qwen2.5-0.5B-Instruct',
+      {
+        dtype: "q4",
+        device: "wasm"
+      }
+    );
 
-      // Create text generation pipeline with Phi-3-mini-4k-instruct
-      this.pipeline = await pipeline(
-        'text-generation',
-        'Xenova/Phi-3-mini-4k-instruct',
-        {
-          // Rely on automatic backend selection (WebGPU, WebGL, WASM)
-        }
-      );
-      
-      this.initialized = true;
-      this.isLoading = false;
-    } catch (err) {
-      this.error = err instanceof Error ? err : new Error(String(err));
-      this.isLoading = false;
-      throw this.error;
-    }
+    this.initialized = true;
+    this.isLoading = false;
+  } catch (err) {
+    console.error('Detailed error in LLM service initialization:', err);
+
+    this.error = err instanceof Error
+      ? err
+      : new Error(String(err));
+
+    this.isLoading = false;
+    throw this.error;
   }
+}
 
-  async generate(prompt: string, options?: {
-    temperature?: number;
-    maxTokens?: number;
+  async generate(prompt: string, options?: { 
+    temperature?: number; 
+    maxTokens?: number; 
     signal?: AbortSignal
   }): Promise<string> {
     if (!this.initialized) {
@@ -133,10 +135,10 @@ export class LLMApiService implements LLMService {
         throw new Error('Generation aborted');
       }
 
-      // Generate response with Phi-3-mini
+      // Generate response
       const result = await this.pipeline(prompt, {
-        max_new_tokens: options?.maxTokens ?? 500,
-        temperature: options?.temperature ?? 0.3,
+        max_new_tokens: options?.maxTokens ?? 64,
+        temperature: options?.temperature ?? 0.7,
         // Do not use random seeds for deterministic behavior in testing
         // Top-k and top-p sampling for quality
         top_k: 50,
@@ -149,7 +151,7 @@ export class LLMApiService implements LLMService {
 
       // Extract generated text (pipeline returns array of objects)
       const generatedText = Array.isArray(result) && result.length > 0
-        ? result[0].toString()
+        ? result[0].generated_text
         : typeof result === 'string'
           ? result
           : result.toString();

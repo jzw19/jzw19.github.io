@@ -39,6 +39,13 @@ const Resume: FC = () => {
             renderAnnotationLayer={false}
             width={Math.floor(fullWidth / 2)}
           />
+          <Page
+            className="resume"
+            pageNumber={2}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+            width={Math.floor(fullWidth / 2)}
+          />
         </Document>
       </PageView>
     </>
